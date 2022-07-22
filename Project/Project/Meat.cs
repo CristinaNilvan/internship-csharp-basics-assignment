@@ -8,9 +8,12 @@ namespace Project
 {
     internal class Meat : Ingredient
     {
-        public Meat(int id, string? name, string? type, int calories, double quantity) : 
+        public string? Origin { get; set; }
+
+        public Meat(int id, string? name, string? type, int calories, double quantity, string? origin) : 
             base(id, name, type, calories, quantity)
         {
+            Origin = origin;
         }
     }
 }
