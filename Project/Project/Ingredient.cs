@@ -10,17 +10,25 @@ namespace Project
     {
         public int Id { get; set; }
         public string? Name { get; set; }
-        public string? Type { get; set; }
         public int Calories { get; set; }
         public double Quantity { get; set; }
 
-        public Ingredient(int id, string? name, string? type, int calories, double quantity)
+        public Ingredient(int id, string? name, int calories, double quantity)
         {
             Id = id;
             Name = name;
-            Type = type;
             Calories = calories;
             Quantity = quantity;
+        }
+
+        public virtual string GenerateIngredientCode()
+        {
+            return $"{Id}{Name[..2]}";
+        }
+
+        public virtual string GenerateIngredientCode(string type)
+        {
+            return $"{Id}{Name[..2]}{type[..2]}";
         }
     }
 }

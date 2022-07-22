@@ -10,10 +10,15 @@ namespace Project
     {
         public double Lactose { get; set; }
 
-        public Dairy(int id, string? name, string? type, int calories, double quantity, double lactose) : 
-            base(id, name, type, calories, quantity)
+        public Dairy(int id, string? name, int calories, double quantity, double lactose) : 
+            base(id, name, calories, quantity)
         {
             Lactose = lactose;
+        }
+
+        public override string GenerateIngredientCode()
+        {
+            return base.GenerateIngredientCode() + Lactose.ToString();
         }
     }
 }
