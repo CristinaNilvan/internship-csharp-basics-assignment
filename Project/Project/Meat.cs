@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Project
 {
-    internal class Meat
+    internal class Meat : Ingredient
     {
+        public Meat(int id, string? name, string? type, int calories, double quantity) : 
+            base(id, name, type, calories, quantity)
+        {
+        }
     }
 }
