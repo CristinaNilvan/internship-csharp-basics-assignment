@@ -8,13 +8,13 @@ namespace Project
 {
     internal class Dairy : Ingredient
     {
-        public double Lactose { get; set; }
-
         public Dairy(int id, string? name, int calories, double quantity, double lactose) : 
             base(id, name, calories, quantity)
         {
             Lactose = lactose;
         }
+
+        public double Lactose { get; set; }
 
         public override string GenerateIngredientCode()
         {
