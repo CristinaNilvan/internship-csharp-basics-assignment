@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,6 +27,7 @@ namespace Project
             return $"{Id}{Name[..2]}";
         }
 
+        //Overloading
         public virtual string GenerateIngredientCode(string type)
         {
             return $"{Id}{Name[..2]}{type[..2]}";
