@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Project
 {
-    internal class Ingredient
+    internal class Ingredient : ICloneable
     {
         public Ingredient(int id, string? name, int calories, double quantity)
         {
@@ -21,6 +21,11 @@ namespace Project
         public string? Name { get; set; }
         public int Calories { get; set; }
         public double Quantity { get; set; }
+
+        public object Clone()
+        {
+            return new Ingredient(Id, Name, Calories, Quantity);
+        }
 
         public virtual string GenerateIngredientCode()
         {
